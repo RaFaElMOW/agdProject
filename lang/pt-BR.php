@@ -32,7 +32,7 @@ return [
     'Our Latest Events' => 'Nossos Últimos Eventos',
     'Recent from blog' => 'Recente do Blog',
     'Join Event' => 'Participar do Evento',
-    'Welcome to Welfare Stablished Since 1898' => 'Bem-vindo à Welfare, Estabelecida Desde 1898',
+    'Welcome to Welfare Stablished Since 1898' => 'Missão | Visão | Valores',
     'Contact Us' => 'Contate-nos',
     'Contact Information' => 'Informações de Contato',
     'Address:' => 'Endereço:',

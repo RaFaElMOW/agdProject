@@ -32,7 +32,7 @@ return [
     'Our Latest Events' => 'Our Latest Events',
     'Recent from blog' => 'Recent from blog',
     'Join Event' => 'Join Event',
-    'Welcome to Welfare Stablished Since 1898' => 'Welcome to Welfare Stablished Since 1898',
+    'Welcome to Welfare Stablished Since 1898' => 'Missão | Visão | Valores',
     'Contact Us' => 'Contact Us',
     'Contact Information' => 'Contact Information',
     'Address:' => 'Address:',
