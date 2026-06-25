@@ -19,22 +19,36 @@
 
     <section class="ftco-section contact-section ftco-degree-bg">
       <div class="container">
-        <div class="row d-flex mb-5 contact-info">
-          <div class="col-md-12 mb-4">
-            <h2 class="h4"><?php echo t('Contact Information'); ?></h2>
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-8 heading-section ftco-animate text-center">
+            <h2 class="mb-4"><?php echo t('Contact Information'); ?></h2>
+            <p>Ficamos sempre alegres em conhecer pessoas dispostas a ajudar no reino de Deus. Deixe uma mensagem e entraremos em contato o mais rápido possível — vamos juntos levar a palavra de Cristo a todas as nações.</p>
           </div>
-          <div class="w-100"></div>
-          <div class="col-md-3">
-            <p><span><?php echo t('Address:'); ?></span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+        </div>
+        <div class="row d-flex mb-4 contact-info">
+          <div class="col-md-3 mb-4">
+            <p><span><?php echo t('Address:'); ?></span> AGD Níger<br>BP. 13.801<br>Niamey - Níger</p>
           </div>
-          <div class="col-md-3">
-            <p><span><?php echo t('Phone:'); ?></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+          <div class="col-md-3 mb-4">
+            <p><span>WhatsApp:</span> <a href="https://api.whatsapp.com/send?phone=5511965714533" target="_blank" rel="noopener">+55 11 96571-4533</a></p>
           </div>
-          <div class="col-md-3">
-            <p><span><?php echo t('Email:'); ?></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+          <div class="col-md-3 mb-4">
+            <p><span><?php echo t('Email:'); ?></span> <a href="mailto:alexandregiovana@uol.com.br">alexandregiovana@uol.com.br</a></p>
           </div>
-          <div class="col-md-3">
-            <p><span><?php echo t('Website'); ?></span> <a href="#">yoursite.com</a></p>
+          <div class="col-md-3 mb-4">
+            <p><span>Relatórios:</span> <a href="mailto:comunicacao@agdniger.com">comunicacao@agdniger.com</a></p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <ul class="ftco-social list-unstyled mb-0">
+              <li class="ftco-animate"><a href="https://www.facebook.com/agdniger" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.instagram.com/agdniger" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a></li>
+              <li class="ftco-animate"><a href="https://twitter.com/xandniger" target="_blank" rel="noopener" aria-label="Twitter"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.youtube.com/alexandrecanhoni" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube"></span></a></li>
+              <li class="ftco-animate"><a href="https://open.spotify.com/artist/2XdJcd6XJApRFv57Pj6HGf" target="_blank" rel="noopener" aria-label="Spotify"><span class="icon-spotify"></span></a></li>
+              <li class="ftco-animate"><a href="https://api.whatsapp.com/send?phone=5511965714533" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="icon-whatsapp"></span></a></li>
+            </ul>
           </div>
         </div>
         <div class="row block-9">
@@ -48,7 +62,11 @@
                 <input type="text" class="form-control" placeholder="<?php echo t('Your Email'); ?>">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="<?php echo t('Subject'); ?>">
+                <select class="form-control">
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option value="relatorio">Receber relatório</option>
+                  <option value="apadrinhamento">Apadrinhamento</option>
+                </select>
               </div>
               <div class="form-group">
                 <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="<?php echo t('Message'); ?>"></textarea>

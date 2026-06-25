@@ -8,9 +8,11 @@
               <h2 class="ftco-heading-2"><?php echo t('About Us'); ?></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/agdniger" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/agdniger" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://twitter.com/xandniger" target="_blank" rel="noopener" aria-label="Twitter"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.youtube.com/alexandrecanhoni" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube"></span></a></li>
+                <li class="ftco-animate"><a href="https://open.spotify.com/artist/2XdJcd6XJApRFv57Pj6HGf" target="_blank" rel="noopener" aria-label="Spotify"><span class="icon-spotify"></span></a></li>
               </ul>
             </div>
           </div>

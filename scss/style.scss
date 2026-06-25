@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5,
 		right: 0;
 		bottom: 0;
 		content: '';
-		opacity: 0;
+		opacity: 0.45;
 		background: $black;
 	}
 }
@@ -772,6 +772,16 @@ h1, h2, h3, h4, h5,
 			opacity: 0;
 		}
 	}
+	&.video-thumb{
+		.icon{
+			width: 64px;
+			height: 64px;
+			opacity: 1;
+			span{
+				font-size: 22px;
+			}
+		}
+	}
 }
 
 //STAFF
@@ -805,6 +815,29 @@ h1, h2, h3, h4, h5,
 		border: 4px solid lighten($black,94%);
 		@include border-radius(50%);
 	}
+	.img-wrap{
+		width: 110px;
+		text-align: center;
+	}
+	.youtube-link{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		margin-top: 12px;
+		background: lighten($primary,40%);
+		@include border-radius(50%);
+		color: $primary;
+		@include transition(.3s);
+		span{
+			font-size: 14px;
+		}
+		&:hover{
+			background: $primary;
+			color: $white;
+		}
+	}
 	.text{
 		p{
 			margin-bottom: 0;
@@ -818,18 +851,45 @@ h1, h2, h3, h4, h5,
 			}
 		}
 	}
+	@include media-breakpoint-down(sm){
+		> .d-flex{
+			flex-direction: column;
+			text-align: center;
+		}
+		.info{
+			width: 100%;
+			margin-left: 0 !important;
+		}
+		.img,
+		.img-wrap{
+			margin: 0 auto 20px;
+		}
+	}
 }
 
 .ftco-social{
-	a{
-		width: 30px;
-		height: 30px;
+	li{
 		display: inline-block;
-		margin-right: 2px;
+	}
+	a{
+		width: 36px;
+		height: 36px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 6px;
 		background: lighten($primary,40%);
+		@include transition(.3s);
 		@include border-radius(50%);
 		span{
 			color: $primary;
+			@include transition(.3s);
+		}
+		&:hover{
+			background: $primary;
+			span{
+				color: $white;
+			}
 		}
 	}
 }
@@ -940,6 +1000,120 @@ h1, h2, h3, h4, h5,
 		}
 	}
 	[aria-expanded="false"] > .expanded, [aria-expanded="true"] > .collapsed {display: none;}
+	.card .card-header a{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		span{
+			float: none;
+			color: $primary;
+		}
+	}
+}
+
+.bank-details{
+	font-size: 15px;
+	line-height: 1.8;
+	color: #4a5562;
+	li{
+		margin-bottom: 4px;
+	}
+	strong{
+		color: $black;
+	}
+}
+
+.sponsor-card{
+	height: 100%;
+	.book-cover{
+		height: 270px;
+		@include transition(height .35s ease);
+		cursor: pointer;
+		&:hover{
+			height: 380px;
+		}
+	}
+	.icon-wrap{
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		margin: 0 auto 20px;
+		background: lighten($primary,40%);
+		@include border-radius(50%);
+		span{
+			font-size: 28px;
+			color: $primary;
+		}
+	}
+	.sponsor-price{
+		font-size: 28px;
+		font-weight: 400;
+		color: $primary;
+		margin-bottom: 15px;
+		span{
+			font-size: 15px;
+			color: #4a5562;
+		}
+	}
+}
+
+.launch-banner{
+	position: relative;
+	display: block;
+	@include border-radius(4px);
+	overflow: hidden;
+	-webkit-box-shadow: 0px 3px 66px -24px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 66px -24px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 66px -24px rgba(0,0,0,0.2);
+	.banner-img{
+		display: block;
+		width: 100%;
+		height: 420px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.launch-badge{
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		z-index: 2;
+		background: $primary;
+		color: $white;
+		font-size: 14px;
+		font-weight: 500;
+		padding: 8px 18px;
+		@include border-radius(30px);
+	}
+	.launch-cta{
+		position: absolute;
+		bottom: 25px;
+		right: 25px;
+		z-index: 2;
+		text-align: right;
+	}
+	@include media-breakpoint-down(sm){
+		.banner-img{
+			height: 0;
+			padding-bottom: 56.25%;
+			background-position: center center;
+		}
+		.launch-badge{
+			top: 12px;
+			left: 12px;
+			font-size: 12px;
+			padding: 6px 14px;
+		}
+		.launch-cta{
+			position: static;
+			padding: 15px;
+			text-align: center;
+			background: $white;
+			.btn{
+				width: 100%;
+			}
+		}
+	}
 }
 
 

@@ -45,7 +45,8 @@
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'donate') ? ' active' : ''; ?>"><a href="donate.php" class="nav-link"><?php echo t('Donate'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'blog') ? ' active' : ''; ?>"><a href="blog.php" class="nav-link"><?php echo t('Blog'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'gallery') ? ' active' : ''; ?>"><a href="gallery.php" class="nav-link"><?php echo t('Gallery'); ?></a></li>
-          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'event') ? ' active' : ''; ?>"><a href="event.php" class="nav-link"><?php echo t('Events'); ?></a></li>
+          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'sponsor') ? ' active' : ''; ?>"><a href="apadrinhar.php" class="nav-link"><?php echo t('Sponsor'); ?></a></li>
+          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'event') ? ' active' : ''; ?>"><a href="event.php" class="nav-link"><?php echo t('Books'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'contact') ? ' active' : ''; ?>"><a href="contact.php" class="nav-link"><?php echo t('Contact'); ?></a></li>
           <li class="nav-item dropdown ftco-seperator">
             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-language mr-1"></span><?php echo i18n_config()['languages'][current_lang()]['short']; ?></a>
