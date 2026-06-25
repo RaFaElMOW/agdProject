@@ -11,7 +11,7 @@
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
              <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.php"><?php echo t('Home'); ?></a></span> <span><?php echo t('About'); ?></span></p>
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('About Us'); ?></h1>
-			<h2 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color: #ffff">"Deus teve um único filho, e fez dele um missionário" David Livingstone</h2>
+			<h2 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color: #ffff"><?php echo t('About Hero Quote'); ?></h2>
           </div>
         </div>
       </div>
@@ -26,26 +26,16 @@
     			</div>
     			<div class="col-md-6 pl-md-5 ftco-animate">
     				<h2 class="mb-4"><?php echo t('Welcome to Welfare Stablished Since 1898'); ?></h2>
-					<p>A AGD – Associação Guerreiros atua em defesa dos direitos de crianças e adolescentes e pela proteção de populações vulneráveis.
-					Somos uma organização cristã de suporte ao desenvolvimento às situações de emergência em ações que permitam superar a pobreza e injustiça.
-					Inspirados pela fé, trabalhamos para auxiliar a todas as pessoas sem distinção de credo, etnia ou gênero.</p>
-					<h3>Áreas atuantes:</h3>
-					<p>Projetos de Nutrição, creches (maternais), Projeto de apadrinhamento para escolaridade, Atelier para mulheres (corte, costura e alfabetização), Projeto Esportivo Futebol, Apoio para adolescentes em formação de profissionais liberais (apadrinhados), Adoção de famílias pastorais locais (com ajuda mensal), Capelania Hospitalar e Prisional, Evangelismo em todas as áreas, Igreja que respira e vive diariamente.</p>
-					<h2>Nossa Missão:</h2>
-					<p>Seguir a Jesus Cristo, trabalhando com os pobres e oprimidos para promover a transformação humana, buscar a justiça, dignidade e proclamar as boas novas do Reino de Deus.</p>
-					<h2>Nossa Visão:</h2>
-					<p>Nossa visão para todos: através dos projetos e ajudas (material, emocional e espiritual) gerar dignidade e vida em abundância.</p>
-					<p>Nossa oração para todos os corações: a vontade para tornar isso uma realidade (se doando, ajudando, servindo, se envolvendo).</p>
-					<h2>Nossos Valores:</h2>
-					<p>Somos discípulos de Jesus (cristãos);
-					“Pois eu tive fome, e vocês me deram de comer; tive sede, e vocês me deram de beber; fui estrangeiro, e vocês me acolheram; necessitei de roupas, e vocês me vestiram; estive enfermo, e vocês cuidaram de mim; estive preso, e vocês me
-					visitaram”.
-					Mateus 25:35-36
-					“O meu mandamento é este: Amem-se uns aos outros como eu os amei. Ninguém
-					tem maior amor do que aquele que dá a sua vida pelos seus amigos.”
-					João 15:12-13
-					Estamos comprometidos em ajudar aos pobres; Valorizamos as pessoas;
-					Administramos com responsabilidade.</p>
+					<p><?php echo t('About Intro Text'); ?></p>
+					<h3><?php echo t('About Areas Heading'); ?></h3>
+					<p><?php echo t('About Areas Text'); ?></p>
+					<h2><?php echo t('About Mission Heading'); ?></h2>
+					<p><?php echo t('About Mission Text'); ?></p>
+					<h2><?php echo t('About Vision Heading'); ?></h2>
+					<p><?php echo t('About Vision Text'); ?></p>
+					<p><?php echo t('About Vision Prayer Text'); ?></p>
+					<h2><?php echo t('About Values Heading'); ?></h2>
+					<p><?php echo t('About Values Text'); ?></p>
     			</div>
     		</div>
     	</div>
@@ -89,7 +79,7 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Membros do time</h2>
+            <h2 class="mb-4"><?php echo t('Team Members Heading'); ?></h2>
           </div>
         </div>
         <div class="row">
@@ -100,13 +90,11 @@
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Alexandre e Giovana Canhoni</a></h3>
         					<div class="text">
-		        				<p>Somos uma grande família, que se importa com o próximo e com as necessidades do próximo. Nossa primeira viagem ao Níger foi no ano de 2002, aonde descobrimos que os rumos de nossas vidas seriam transformados. Nos apegamos a eles e eles se apegaram a nós. Somos uma família unida, grande e cheia de sonhos que tentaremos realizar juntos.</p></br>
-								<p>Nosso desafio é ajudar ao próximo,
-								assim como aquele a quem cremos
-								e seguimos o fez.</p></br>
-								<p>"Amar ao próximo como a ti mesmo"... Jesus.</p></br>
-								<p>“Assim também vocês, quando tiverem feito tudo o que for ordenado, devem dizer: ‘Somos servos inúteis; apenas cumprimos o nosso dever’.” 
-								<span>Lucas 17:10</span></p>
+		        				<p><?php echo t('Staff Xandi Gi Bio 1'); ?></p></br>
+								<p><?php echo t('Staff Xandi Gi Bio 2'); ?></p></br>
+								<p><?php echo t('Staff Xandi Gi Bio 3'); ?></p></br>
+								<p><?php echo t('Staff Xandi Gi Bio 4'); ?> 
+								<span><?php echo t('Bible Ref Lucas 1710'); ?></span></p>
 		        			</div>
         				</div>
         			</div>
@@ -118,11 +106,11 @@
         				<div class="img" style="background-image: url(images/glaucelir_rosa.jpg);"></div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Glaucelir Rosa</a></h3>
-        					<span class="position">Missionária</span>
+        					<span class="position"><?php echo t('Position Missionaria'); ?></span>
         					<div class="text">
-		        				<p>Glaucelir Rosa servindo aos nigerinos juntamente conosco desde 2012.</p>
-								<p>Num só propósito pelo Reino de Deus!</p>
-								<p>AGDNíger eu faço parte!</p>
+		        				<p><?php echo t('Staff Glaucelir Bio 1'); ?></p>
+								<p><?php echo t('Staff Glaucelir Bio 2'); ?></p>
+								<p><?php echo t('Staff Glaucelir Bio 3'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -134,14 +122,11 @@
         				<div class="img" style="background-image: url(images/equipe_local.jpg);"></div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Equipe Local</a></h3>
-        					<span class="position">Pastores e Monitores</span>
+        					<span class="position"><?php echo t('Position Pastores Monitores'); ?></span>
         					<div class="text">
-		        				<p>Envolvidos com a AGD há anos.
-								São vários integrantes entre pastores, monitores, professores, filhos, cozinheira e outros.
-								Num só propósito pelo Reino de Deus!
-								AGDNíger eu faço parte!</p></br>
-								<p>"Na verdade, na verdade vos digo que, se o grão de trigo, caindo na terra, não morrer, fica ele só; mas se morrer, dá muito fruto. Quem ama a sua vida perdê-la-á, e quem neste mundo odeia a sua vida, guardá-la-á para a vida eterna".
-								<span>João 12:23-25</span></p>
+		        				<p><?php echo t('Staff Equipe Local Bio 1'); ?></p></br>
+								<p><?php echo t('Staff Equipe Local Bio 2'); ?>
+								<span><?php echo t('Bible Ref Joao 1223'); ?></span></p>
 		        			</div>
         				</div>
         			</div>
@@ -155,7 +140,7 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Depoimentos</h2>
+            <h2 class="mb-4"><?php echo t('Testimonials Heading'); ?></h2>
           </div>
         </div>
         <div class="row depoimentos">
@@ -168,9 +153,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Durvalina Barreto Bezerra</a></h3>
-        					<span class="position">Teóloga pelo Seminário Betel</span>
+        					<span class="position"><?php echo t('Position Teologa Betel'); ?></span>
         					<div class="text">
-		        				<p>Eles tem feito um trabalho maravilhoso em áreas sociais escolas vários tipos de ações humanitárias e levando Jesus as pessoas.</p>
+		        				<p><?php echo t('Testimonial Durvalina Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -185,9 +170,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Josimar Salum</a></h3>
-        					<span class="position">Diretor Executivo da Kings Net</span>
+        					<span class="position"><?php echo t('Position Diretor Kings Net'); ?></span>
         					<div class="text">
-		        				<p>Transformando Comunidades, Lutando contra a pobreza</p>
+		        				<p><?php echo t('Testimonial Salum Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -202,9 +187,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Pr. Alírio Misael</a></h3>
-        					<span class="position">Diretor de Missões da Igreja Avivamento</span>
+        					<span class="position"><?php echo t('Position Diretor Missoes Avivamento'); ?></span>
         					<div class="text">
-		        				<p>Eu pude passar por diversos países conhecendo a realidade missionária, e o trabalho que o Xand faz é diferenciado.</p>
+		        				<p><?php echo t('Testimonial Misael Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -219,9 +204,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Pr. Auderico Alves</a></h3>
-        					<span class="position">Pastor na Missão Internacional da Fé</span>
+        					<span class="position"><?php echo t('Position Pastor Missao Fe'); ?></span>
         					<div class="text">
-		        				<p>Eles não são apenas missionários que passam pelo campo, eles vivem lá, eles habitam lá, sua casa é lá. eles estão no meio do povo. Eles são verdadeiramente para nós um exemplo de pessoas que seguem o mestre.</p>
+		        				<p><?php echo t('Testimonial Auderico Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -236,9 +221,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Pr Eber Cocareli</a></h3>
-        					<span class="position">Jornalista e Teologo</span>
+        					<span class="position"><?php echo t('Position Jornalista Teologo'); ?></span>
         					<div class="text">
-		        				<p>Eu posso atestar com toda a segurança de que o Xand e a Giovana são pessoas de Deus. Eles fazem um trabalho fantástico.</p>
+		        				<p><?php echo t('Testimonial Eber Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -253,9 +238,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Ari Mendes</a></h3>
-        					<span class="position">Produtor Musical e Músico</span>
+        					<span class="position"><?php echo t('Position Produtor Musical'); ?></span>
         					<div class="text">
-		        				<p>Eu não conheço ninguém que faça a obra de Deus com tanta pureza, com tanta beleza como esse menino que largou a fama e o sucesso de ser um paquito e foi cuidar das coisas de Deus. Xand é um farol, uma luz de Deus para muita gente.</p>
+		        				<p><?php echo t('Testimonial Ari Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -270,9 +255,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Roberto Ferreira do Amaral</a></h3>
-        					<span class="position">Advogado e Colaborador do Projeto</span>
+        					<span class="position"><?php echo t('Position Advogado Colaborador'); ?></span>
         					<div class="text">
-		        				<p>Eu fui para o Níger, eu conheci o projeto e eu me engajei desde então (há 6 anos), e só tenho alegrias desde que comecei a trabalhar com eles nesse projeto.</p>
+		        				<p><?php echo t('Testimonial Roberto Text'); ?></p>
 		        			</div>
         				</div>
         			</div>
@@ -287,9 +272,9 @@
         				</div>
         				<div class="info ml-4">
         					<h3><a href="teacher-single.html">Mario Fagundes</a></h3>
-        					<span class="position">Pastor Discípulos em Salvador</span>
+        					<span class="position"><?php echo t('Position Pastor Discipulos Salvador'); ?></span>
         					<div class="text">
-		        				<p>Quando conheci Xand e Giovana, pelo testemunho que vi na vida deles, fiquei impactado pelo que Deus tem feito neles e através deles, o chamado que tiveram, a pronta resposta ao chamado de Deus para irem para o Níger.</p>
+		        				<p><?php echo t('Testimonial Mario Text'); ?></p>
 		        			</div>
         				</div>
         			</div>

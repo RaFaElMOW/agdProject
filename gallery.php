@@ -1,5 +1,5 @@
 <?php
-  $pageTitle = 'Galleries';
+  $pageTitle = 'Media';
   $activePage = 'gallery';
   include 'includes/partials/header.php';
 ?>
@@ -9,82 +9,191 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.php"><?php echo t('Home'); ?></a></span> <span><?php echo t('Gallery'); ?></span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('Galleries'); ?></h1>
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.php"><?php echo t('Home'); ?></a></span> <span><?php echo t('Media'); ?></span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('Media'); ?></h1>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ftco-section ftco-gallery">
-    	<div class="container">
-	    	<div class="d-md-flex">
-		    	<a href="images/cause-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-2.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/cause-3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-3.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/cause-4.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-4.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/cause-5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-5.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-	    	</div>
-	    	<div class="d-md-flex">
-		    	<a href="images/cause-6.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/cause-6.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/image_3.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_3.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_1.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_2.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    </div>
-		    <div class="d-md-flex">
-		    	<a href="images/event-1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-1.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/event-2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-2.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/image_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/image_4.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    	<a href="images/image_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/event-4.jpg);">
-		    		<div class="icon d-flex justify-content-center align-items-center">
-		    			<span class="icon-search"></span>
-		    		</div>
-		    	</a>
-		    </div>
+    <section class="ftco-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Galeria</h2>
+            <p>Fotos da AGD na mídia: entrevistas, reportagens e bastidores do trabalho no Níger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-gallery">
+    	<div class="d-md-flex">
+	    	<a href="images/midia_materia_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_1.jpg);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/midia_materia_2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_2.jpg);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/midia_materia_3.png" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_3.png);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/midia_materia_4.png" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_4.png);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+    	</div>
+    	<div class="d-md-flex">
+	    	<a href="images/midia_materia_5.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_5.jpg);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/midia_materia_6.png" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_6.png);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/midia_pequenos_1.jpeg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_pequenos_1.jpeg);">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
 	    </div>
+    </section>
+
+    <section class="ftco-section pt-4 pb-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center ftco-animate">
+            <a href="blog.php" class="btn btn-primary px-4 py-3">Ver Mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Mídia</h2>
+            <p>Series & vídeos com Alexandre Canhoni — clique para assistir.</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=bqnRY6RZ8NA" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/bqnRY6RZ8NA/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=bqnRY6RZ8NA" class="popup-youtube">Toda Porta Está Aberta para Pregar o Evangelho</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=2_4bqahBcoQ" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/2_4bqahBcoQ/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=2_4bqahBcoQ" class="popup-youtube">Assista até o final</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=pNRswZbH1dM" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/pNRswZbH1dM/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=pNRswZbH1dM" class="popup-youtube">A Importância da Organização no Lar: Pequenos Hábitos, Grandes Resultados</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=BeWINd-ZQ8I" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/BeWINd-ZQ8I/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BeWINd-ZQ8I" class="popup-youtube">Ne Renonce pas, ton miracle est proche</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=JJ_aLpGO0lE" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/JJ_aLpGO0lE/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=JJ_aLpGO0lE" class="popup-youtube">Organize agora: guarda-roupa, despensa e economia</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=UUazxatsSU8" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/UUazxatsSU8/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=UUazxatsSU8" class="popup-youtube">Você é nova criatura em Cristo — deixe o passado</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=irj4H1vAfjY" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/irj4H1vAfjY/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=irj4H1vAfjY" class="popup-youtube">História do Níger e o abuso de uma criança</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="https://www.youtube.com/watch?v=BADnlUyBwqM" class="block-20 popup-youtube" style="background-image: url(https://i.ytimg.com/vi/BADnlUyBwqM/hqdefault.jpg);">
+              </a>
+              <div class="text p-4 d-block">
+              	<div class="meta mb-3">
+                  <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
+                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                </div>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BADnlUyBwqM" class="popup-youtube">PROJETO VEM - Participação Alexandre e Giovana Canhoni</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="ftco-section-3 img" style="background-image: url(images/bg_3.jpg);">
@@ -95,21 +204,13 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Be a volunteer'); ?></h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Name'); ?>">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Email'); ?>">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="<?php echo t('Message'); ?>"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="<?php echo t('Send Message'); ?>" class="btn btn-white py-3 px-5">
-            </div>
-          </form>
+    			<h3 class="mb-3">Faça uma Doação</h3>
+    			<p>Sua doação ajuda a sustentar os projetos da AGD no Níger: alimentação, educação e esperança para quem mais precisa.</p>
+    			<p class="mb-4"><strong>PIX:</strong> 08.280.906/0001-19<br><strong>Banco Itaú:</strong> Ag. 6375 / Conta 01630-7</p>
+    			<p>
+    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2">Quero Doar</a>
+    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2">Doar Online</a>
+    			</p>
     		</div>
     		</div>
     	</div>

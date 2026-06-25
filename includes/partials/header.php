@@ -41,13 +41,18 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'home') ? ' active' : ''; ?>"><a href="index.php" class="nav-link"><?php echo t('Home'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'about') ? ' active' : ''; ?>"><a href="about.php" class="nav-link"><?php echo t('About'); ?></a></li>
-          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'causes') ? ' active' : ''; ?>"><a href="causes.php" class="nav-link"><?php echo t('Causes'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'donate') ? ' active' : ''; ?>"><a href="donate.php" class="nav-link"><?php echo t('Donate'); ?></a></li>
-          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'blog') ? ' active' : ''; ?>"><a href="blog.php" class="nav-link"><?php echo t('Blog'); ?></a></li>
-          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'gallery') ? ' active' : ''; ?>"><a href="gallery.php" class="nav-link"><?php echo t('Gallery'); ?></a></li>
+          <li class="nav-item<?php echo (isset($activePage) && $activePage === 'gallery') ? ' active' : ''; ?>"><a href="gallery.php" class="nav-link"><?php echo t('Media'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'sponsor') ? ' active' : ''; ?>"><a href="apadrinhar.php" class="nav-link"><?php echo t('Sponsor'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'event') ? ' active' : ''; ?>"><a href="event.php" class="nav-link"><?php echo t('Books'); ?></a></li>
           <li class="nav-item<?php echo (isset($activePage) && $activePage === 'contact') ? ' active' : ''; ?>"><a href="contact.php" class="nav-link"><?php echo t('Contact'); ?></a></li>
+          <li class="nav-item dropdown<?php echo (isset($activePage) && in_array($activePage, ['quemsomos', 'projetos'])) ? ' active' : ''; ?>">
+            <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo t('More'); ?></a>
+            <div class="dropdown-menu" aria-labelledby="moreDropdown">
+              <a class="dropdown-item<?php echo (isset($activePage) && $activePage === 'quemsomos') ? ' active' : ''; ?>" href="quemsomos.php"><?php echo t('Who We Are'); ?></a>
+              <a class="dropdown-item<?php echo (isset($activePage) && $activePage === 'projetos') ? ' active' : ''; ?>" href="projetos.php"><?php echo t('Projects'); ?></a>
+            </div>
+          </li>
           <li class="nav-item dropdown ftco-seperator">
             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-language mr-1"></span><?php echo i18n_config()['languages'][current_lang()]['short']; ?></a>
             <div class="dropdown-menu" aria-labelledby="languageDropdown">

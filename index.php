@@ -12,7 +12,7 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('Doing Nothing is Not An Option of Our Life'); ?><span style="color:#f86f2d"> NÍGER</span></h1>
             <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('Created by'); ?></p>
 
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span><?php echo t('Watch Video'); ?></a></p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://www.youtube.com/watch?v=BP-6xjwgs-0" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span><?php echo t('Watch Video'); ?></a></p>
           </div>
         </div>
       </div>
@@ -100,85 +100,55 @@
     				<div class="carousel-cause owl-carousel">
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-1.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/cause-1.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Nutrição</a></h3>
+		    						<p>São 11 projetos em diversas regiões. Cerca de 1.000 crianças atendidas.</p>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-2.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/image_5.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Mulheres</a></h3>
+		    						<p>2 centros de formação em corte e costura e alfabetização para mulheres. Ao término do curso, elas recebem uma máquina de costura.</p>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-3.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/image_1.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Creches</a></h3>
+		    						<p>São 4 creches no Níger, onde as crianças recebem alimentação, banho, entretenimento e alfabetização. Cerca de 200 crianças atendidas.</p>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-4.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/event-3.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Esporte</a></h3>
+		    						<p>Futebol para crianças, jovens e adolescentes.</p>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-5.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/cause-6.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Escola</a></h3>
+		    						<p>Escolaridade para crianças e adolescentes. Formação de profissionais liberais e escolaridade para universitários.</p>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-6.jpg);"></a>
+		    					<a href="projetos.php" class="img" style="background-image: url(images/image_6.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+		    						<h3><a href="projetos.php">Hospital</a></h3>
+		    						<p>Ajuda semanal na área pediátrica do Hospital Nacional em Niamey, levando alimento (frutas, farinha nutritiva, leite, entre outros).</p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -186,61 +156,6 @@
     			</div>
     		</div>
     	</div>
-    </section>
-
-    <section class="ftco-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4"><?php echo t('Latest Donations'); ?></h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position"><?php echo t('Donated Just now'); ?></span>
-        					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(images/person_2.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position"><?php echo t('Donated Just now'); ?></span>
-        					<div class="text">
-		        				<p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(images/person_3.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position"><?php echo t('Donated Just now'); ?></span>
-        					<div class="text">
-		        				<p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-      </div>
     </section>
 
     <section class="ftco-gallery">
@@ -301,48 +216,47 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.php" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.php" class="block-20" style="background-image: url('images/news_1.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><span class="icon-calendar mr-1"></span> 8 de abr.</div>
+                  <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-3"><a href="blog-single.php">Quem somos nós?</a></h3>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.php" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.php" class="block-20" style="background-image: url('images/news_2.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><span class="icon-calendar mr-1"></span> 5 de abr.</div>
+                  <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-3"><a href="blog-single.php">Amor que transforma</a></h3>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.php" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.php" class="block-20" style="background-image: url('images/news_3.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><span class="icon-calendar mr-1"></span> 20 de mai. de 2025</div>
+                  <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-3"><a href="blog-single.php">Relatório Níger</a></h3>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-12 text-center ftco-animate">
+            <a href="blog.php" class="btn btn-primary px-4 py-3">Ver Mais</a>
           </div>
         </div>
       </div>
@@ -419,21 +333,13 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Be a volunteer'); ?></h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Name'); ?>">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Email'); ?>">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="<?php echo t('Message'); ?>"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="<?php echo t('Send Message'); ?>" class="btn btn-white py-3 px-5">
-            </div>
-          </form>
+    			<h3 class="mb-3">Faça uma Doação</h3>
+    			<p>Sua doação ajuda a sustentar os projetos da AGD no Níger: alimentação, educação e esperança para quem mais precisa.</p>
+    			<p class="mb-4"><strong>PIX:</strong> 08.280.906/0001-19<br><strong>Banco Itaú:</strong> Ag. 6375 / Conta 01630-7</p>
+    			<p>
+    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2">Quero Doar</a>
+    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2">Doar Online</a>
+    			</p>
     		</div>
     		</div>
     	</div>

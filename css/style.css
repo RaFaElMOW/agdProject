@@ -7812,6 +7812,10 @@ h1, h2, h3, h4, h5,
 .volunteer h3 {
   color: #fff; }
 
+.volunteer p,
+.volunteer p strong {
+  color: #fff; }
+
 .volunter-form .form-control {
   border: 2px solid rgba(255, 255, 255, 0.7);
   height: 58px !important;

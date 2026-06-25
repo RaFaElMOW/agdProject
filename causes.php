@@ -131,21 +131,13 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Be a volunteer'); ?></h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Name'); ?>">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="<?php echo t('Your Email'); ?>">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="<?php echo t('Message'); ?>"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="<?php echo t('Send Message'); ?>" class="btn btn-white py-3 px-5">
-            </div>
-          </form>
+    			<h3 class="mb-3">Faça uma Doação</h3>
+    			<p>Sua doação ajuda a sustentar os projetos da AGD no Níger: alimentação, educação e esperança para quem mais precisa.</p>
+    			<p class="mb-4"><strong>PIX:</strong> 08.280.906/0001-19<br><strong>Banco Itaú:</strong> Ag. 6375 / Conta 01630-7</p>
+    			<p>
+    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2">Quero Doar</a>
+    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2">Doar Online</a>
+    			</p>
     		</div>
     		</div>
     	</div>
