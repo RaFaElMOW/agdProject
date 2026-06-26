@@ -22,7 +22,7 @@
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-8 heading-section ftco-animate text-center">
             <h2 class="mb-4"><?php echo t('Contact Information'); ?></h2>
-            <p>Ficamos sempre alegres em conhecer pessoas dispostas a ajudar no reino de Deus. Deixe uma mensagem e entraremos em contato o mais rápido possível — vamos juntos levar a palavra de Cristo a todas as nações.</p>
+            <p><?php echo t('Contact Intro Text'); ?></p>
           </div>
         </div>
         <div class="row d-flex mb-4 contact-info">
@@ -30,13 +30,13 @@
             <p><span><?php echo t('Address:'); ?></span> AGD Níger<br>BP. 13.801<br>Niamey - Níger</p>
           </div>
           <div class="col-md-3 mb-4">
-            <p><span>WhatsApp:</span> <a href="https://api.whatsapp.com/send?phone=5511965714533" target="_blank" rel="noopener">+55 11 96571-4533</a></p>
+            <p><span><?php echo t('WhatsApp Label'); ?></span> <a href="https://api.whatsapp.com/send?phone=5511965714533" target="_blank" rel="noopener">+55 11 96571-4533</a></p>
           </div>
           <div class="col-md-3 mb-4">
             <p><span><?php echo t('Email:'); ?></span> <a href="mailto:alexandregiovana@uol.com.br">alexandregiovana@uol.com.br</a></p>
           </div>
           <div class="col-md-3 mb-4">
-            <p><span>Relatórios:</span> <a href="mailto:comunicacao@agdniger.com">comunicacao@agdniger.com</a></p>
+            <p><span><?php echo t('Reports Label'); ?></span> <a href="mailto:comunicacao@agdniger.com">comunicacao@agdniger.com</a></p>
           </div>
         </div>
         <div class="row mb-5">
@@ -63,9 +63,9 @@
               </div>
               <div class="form-group">
                 <select class="form-control">
-                  <option value="" selected disabled>Selecione uma opção</option>
-                  <option value="relatorio">Receber relatório</option>
-                  <option value="apadrinhamento">Apadrinhamento</option>
+                  <option value="" selected disabled><?php echo t('Select An Option'); ?></option>
+                  <option value="relatorio"><?php echo t('Receive Report Option'); ?></option>
+                  <option value="apadrinhamento"><?php echo t('Sponsorship Option'); ?></option>
                 </select>
               </div>
               <div class="form-group">

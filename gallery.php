@@ -20,8 +20,8 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Galeria</h2>
-            <p>Fotos da AGD na mídia: entrevistas, reportagens e bastidores do trabalho no Níger.</p>
+            <h2 class="mb-4"><?php echo t('Gallery Heading'); ?></h2>
+            <p><?php echo t('Gallery Intro Text'); ?></p>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12 text-center ftco-animate">
-            <a href="blog.php" class="btn btn-primary px-4 py-3">Ver Mais</a>
+            <a href="blog.php" class="btn btn-primary px-4 py-3"><?php echo t('See More Button'); ?></a>
           </div>
         </div>
       </div>
@@ -83,8 +83,8 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Mídia</h2>
-            <p>Series & vídeos com Alexandre Canhoni — clique para assistir.</p>
+            <h2 class="mb-4"><?php echo t('Media Heading'); ?></h2>
+            <p><?php echo t('Media Intro Text'); ?></p>
           </div>
         </div>
         <div class="row d-flex">
@@ -95,9 +95,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=bqnRY6RZ8NA" class="popup-youtube">Toda Porta Está Aberta para Pregar o Evangelho</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=bqnRY6RZ8NA" class="popup-youtube"><?php echo t('Video Title Toda Porta'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -108,9 +108,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=2_4bqahBcoQ" class="popup-youtube">Assista até o final</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=2_4bqahBcoQ" class="popup-youtube"><?php echo t('Video Title Assista Final'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -121,9 +121,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=pNRswZbH1dM" class="popup-youtube">A Importância da Organização no Lar: Pequenos Hábitos, Grandes Resultados</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=pNRswZbH1dM" class="popup-youtube"><?php echo t('Video Title Importancia Organizacao'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -134,9 +134,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BeWINd-ZQ8I" class="popup-youtube">Ne Renonce pas, ton miracle est proche</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BeWINd-ZQ8I" class="popup-youtube"><?php echo t('Video Title Ne Renonce'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -147,9 +147,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=JJ_aLpGO0lE" class="popup-youtube">Organize agora: guarda-roupa, despensa e economia</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=JJ_aLpGO0lE" class="popup-youtube"><?php echo t('Video Title Organize Agora'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -160,9 +160,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=UUazxatsSU8" class="popup-youtube">Você é nova criatura em Cristo — deixe o passado</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=UUazxatsSU8" class="popup-youtube"><?php echo t('Video Title Nova Criatura'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -173,9 +173,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=irj4H1vAfjY" class="popup-youtube">História do Níger e o abuso de uma criança</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=irj4H1vAfjY" class="popup-youtube"><?php echo t('Video Title Historia Niger'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -186,9 +186,9 @@
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
                   <div><span class="icon-person mr-1"></span> Alexandre Canhoni</div>
-                  <div><span class="icon-play mr-1"></span> Vídeo</div>
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
                 </div>
-                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BADnlUyBwqM" class="popup-youtube">PROJETO VEM - Participação Alexandre e Giovana Canhoni</a></h3>
+                <h3 class="heading mt-3"><a href="https://www.youtube.com/watch?v=BADnlUyBwqM" class="popup-youtube"><?php echo t('Video Title Projeto Vem'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -204,12 +204,12 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3">Faça uma Doação</h3>
-    			<p>Sua doação ajuda a sustentar os projetos da AGD no Níger: alimentação, educação e esperança para quem mais precisa.</p>
-    			<p class="mb-4"><strong>PIX:</strong> 08.280.906/0001-19<br><strong>Banco Itaú:</strong> Ag. 6375 / Conta 01630-7</p>
+    			<h3 class="mb-3"><?php echo t('Make A Donation Heading'); ?></h3>
+    			<p><?php echo t('Make A Donation Text'); ?></p>
+    			<p class="mb-4"><?php echo t('Pix Bank Info'); ?></p>
     			<p>
-    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2">Quero Doar</a>
-    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2">Doar Online</a>
+    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2"><?php echo t('I Want To Donate Button'); ?></a>
+    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2"><?php echo t('Donate Online Button'); ?></a>
     			</p>
     		</div>
     		</div>

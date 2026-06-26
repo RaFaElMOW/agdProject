@@ -102,8 +102,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/cause-1.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Nutrição</a></h3>
-		    						<p>São 11 projetos em diversas regiões. Cerca de 1.000 crianças atendidas.</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Nutricao Title'); ?></a></h3>
+		    						<p><?php echo t('Project Nutricao Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -111,8 +111,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/image_5.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Mulheres</a></h3>
-		    						<p>2 centros de formação em corte e costura e alfabetização para mulheres. Ao término do curso, elas recebem uma máquina de costura.</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Mulheres Title'); ?></a></h3>
+		    						<p><?php echo t('Project Mulheres Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -120,8 +120,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/image_1.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Creches</a></h3>
-		    						<p>São 4 creches no Níger, onde as crianças recebem alimentação, banho, entretenimento e alfabetização. Cerca de 200 crianças atendidas.</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Creches Title'); ?></a></h3>
+		    						<p><?php echo t('Project Creches Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -129,8 +129,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/event-3.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Esporte</a></h3>
-		    						<p>Futebol para crianças, jovens e adolescentes.</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Esporte Title'); ?></a></h3>
+		    						<p><?php echo t('Project Esporte Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -138,8 +138,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/cause-6.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Escola</a></h3>
-		    						<p>Escolaridade para crianças e adolescentes. Formação de profissionais liberais e escolaridade para universitários.</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Escola Title'); ?></a></h3>
+		    						<p><?php echo t('Project Escola Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -147,8 +147,8 @@
 	    					<div class="cause-entry">
 		    					<a href="projetos.php" class="img" style="background-image: url(images/image_6.jpg);"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="projetos.php">Hospital</a></h3>
-		    						<p>Ajuda semanal na área pediátrica do Hospital Nacional em Niamey, levando alimento (frutas, farinha nutritiva, leite, entre outros).</p>
+		    						<h3><a href="projetos.php"><?php echo t('Project Hospital Title'); ?></a></h3>
+		    						<p><?php echo t('Project Hospital Text'); ?></p>
 		    					</div>
 		    				</div>
 	    				</div>
@@ -220,10 +220,10 @@
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><span class="icon-calendar mr-1"></span> 8 de abr.</div>
+                  <div><span class="icon-calendar mr-1"></span> <?php echo t('Date Apr 8'); ?></div>
                   <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="blog-single.php">Quem somos nós?</a></h3>
+                <h3 class="heading mt-3"><a href="blog-single.php"><?php echo t('Article Quem Somos Title'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -233,10 +233,10 @@
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><span class="icon-calendar mr-1"></span> 5 de abr.</div>
+                  <div><span class="icon-calendar mr-1"></span> <?php echo t('Date Apr 5'); ?></div>
                   <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="blog-single.php">Amor que transforma</a></h3>
+                <h3 class="heading mt-3"><a href="blog-single.php"><?php echo t('Article Amor Transforma Title'); ?></a></h3>
               </div>
             </div>
           </div>
@@ -246,17 +246,17 @@
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
-                  <div><span class="icon-calendar mr-1"></span> 20 de mai. de 2025</div>
+                  <div><span class="icon-calendar mr-1"></span> <?php echo t('Date May 20 2025'); ?></div>
                   <div><span class="icon-person mr-1"></span> Giovana Canhoni</div>
                 </div>
-                <h3 class="heading mt-3"><a href="blog-single.php">Relatório Níger</a></h3>
+                <h3 class="heading mt-3"><a href="blog-single.php"><?php echo t('Article Relatorio Niger Title'); ?></a></h3>
               </div>
             </div>
           </div>
         </div>
         <div class="row justify-content-center mt-3">
           <div class="col-md-12 text-center ftco-animate">
-            <a href="blog.php" class="btn btn-primary px-4 py-3">Ver Mais</a>
+            <a href="blog.php" class="btn btn-primary px-4 py-3"><?php echo t('See More Button'); ?></a>
           </div>
         </div>
       </div>
@@ -333,12 +333,12 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3">Faça uma Doação</h3>
-    			<p>Sua doação ajuda a sustentar os projetos da AGD no Níger: alimentação, educação e esperança para quem mais precisa.</p>
-    			<p class="mb-4"><strong>PIX:</strong> 08.280.906/0001-19<br><strong>Banco Itaú:</strong> Ag. 6375 / Conta 01630-7</p>
+    			<h3 class="mb-3"><?php echo t('Make A Donation Heading'); ?></h3>
+    			<p><?php echo t('Make A Donation Text'); ?></p>
+    			<p class="mb-4"><?php echo t('Pix Bank Info'); ?></p>
     			<p>
-    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2">Quero Doar</a>
-    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2">Doar Online</a>
+    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2"><?php echo t('I Want To Donate Button'); ?></a>
+    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2"><?php echo t('Donate Online Button'); ?></a>
     			</p>
     		</div>
     		</div>

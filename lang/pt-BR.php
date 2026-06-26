@@ -276,4 +276,9 @@ return [
     'Contact Heading Short' => 'Contato',
     'Instagram Label' => 'Instagram:',
     'About Intro Text' => 'A AGD – Associação Guerreiros atua em defesa dos direitos de crianças e adolescentes e pela proteção de populações vulneráveis. Somos uma organização cristã de suporte ao desenvolvimento às situações de emergência em ações que permitam superar a pobreza e injustiça. Inspirados pela fé, trabalhamos para auxiliar a todas as pessoas sem distinção de credo, etnia ou gênero.',
+    'Footer AGD Copyright' => '© 2020 by AGD Guerreiros de Deus',
+    'Footer Store Shipped By' => 'Produtos da loja, enviados por:',
+    'Footer Store Legal Info' => 'Instituto Social e Comunitário Guerreiros de Deus CNPJ 08.280.906/0001-19',
+    'Footer Physical Product Policy' => 'Produto físico: entrega via correio (cálculo do frete via correios, prazo 10 dias) + troca em até 7 dias - reembolso após devolução se o produto se encontrar sem uso e em perfeito estado.',
+    'Footer Digital Product Policy' => 'Produto digital e-book: entrega imediata após o pagamento via link de download - produto digital. Não aceitamos devoluções, nem fazemos troca, o reembolso não pode ser feito, pois o produto é digital.',
 ];

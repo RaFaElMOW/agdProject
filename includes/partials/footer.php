@@ -72,8 +72,13 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+
+            <p class="mt-3"><?php echo t('Footer AGD Copyright'); ?></p>
+            <p><?php echo t('Footer Store Shipped By'); ?></p>
+            <p><?php echo t('Footer Store Legal Info'); ?></p>
+            <p><?php echo t('Footer Physical Product Policy'); ?></p>
+            <p><?php echo t('Footer Digital Product Policy'); ?></p>
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
