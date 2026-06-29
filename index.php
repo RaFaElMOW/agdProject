@@ -24,9 +24,9 @@
     			<div class="col-md-5 d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 color-1 align-items-stretch">
               <div class="text">
-              	<span>Served Over</span>
-                <strong class="number" data-number="1432805">0</strong>
-                <span>Children in 190 countries in the world</span>
+              	<span><?php echo t('Stat Served Prefix'); ?></span>
+                <strong class="number" data-number="<?php echo (int) \App\Support\Settings::get('stat_children_served', '1432805'); ?>">0</strong>
+                <span><?php echo t('Stat Children Countries Suffix'); ?></span>
               </div>
             </div>
           </div>
@@ -333,13 +333,7 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Make A Donation Heading'); ?></h3>
-    			<p><?php echo t('Make A Donation Text'); ?></p>
-    			<p class="mb-4"><?php echo t('Pix Bank Info'); ?></p>
-    			<p>
-    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2"><?php echo t('I Want To Donate Button'); ?></a>
-    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2"><?php echo t('Donate Online Button'); ?></a>
-    			</p>
+    			<?php echo \App\Core\View::render('partials/donation-cta'); ?>
     		</div>
     		</div>
     	</div>

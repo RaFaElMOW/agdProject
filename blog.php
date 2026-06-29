@@ -1,6 +1,13 @@
 <?php
   $pageTitle = 'Blog';
   $activePage = 'blog';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $blogPage = max(1, (int) ($_GET['page'] ?? 1));
+  $blogResult = (new \App\Repositories\BlogPostRepository())->publishedPaginated($blogPage, 9);
+  $blogPosts = $blogResult['rows'];
+  $blogTotalPages = (int) ceil($blogResult['total'] / 9) ?: 1;
+
   include 'includes/partials/header.php';
 ?>
 
@@ -19,6 +26,35 @@
 
     <section class="ftco-section">
       <div class="container">
+        <?php if ($blogPosts !== []): ?>
+        <div class="row d-flex">
+          <?php foreach ($blogPosts as $post): ?>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="<?php echo e('blog/' . $post['slug']); ?>" class="block-20" style="background-image: url('<?php echo e(public_asset_url($post['banner'] ?: 'images/news_1.jpg')); ?>');">
+              </a>
+              <div class="text p-4 d-block">
+                <div class="meta mb-3">
+                  <div><span class="icon-calendar mr-1"></span> <?php echo e(date('d/m/Y', strtotime($post['published_at']))); ?></div>
+                  <?php if (!empty($post['category_name'])): ?><div><span class="icon-bookmark mr-1"></span> <?php echo e($post['category_name']); ?></div><?php endif; ?>
+                </div>
+                <h3 class="heading mt-3"><a href="<?php echo e('blog/' . $post['slug']); ?>"><?php echo e($post['title']); ?></a></h3>
+                <?php if (!empty($post['excerpt'])): ?><p><?php echo e(mb_strimwidth($post['excerpt'], 0, 120, '...')); ?></p><?php endif; ?>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php if ($blogTotalPages > 1): ?>
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-12 text-center">
+            <?php if ($blogPage > 1): ?><a href="?page=<?php echo $blogPage - 1; ?>" class="btn btn-secondary px-3 py-2">&laquo;</a><?php endif; ?>
+            <span class="px-2">Página <?php echo $blogPage; ?> de <?php echo $blogTotalPages; ?></span>
+            <?php if ($blogPage < $blogTotalPages): ?><a href="?page=<?php echo $blogPage + 1; ?>" class="btn btn-secondary px-3 py-2">&raquo;</a><?php endif; ?>
+          </div>
+        </div>
+        <?php endif; ?>
+        <?php else: ?>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
@@ -147,6 +183,7 @@
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 

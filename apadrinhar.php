@@ -1,6 +1,10 @@
 <?php
   $pageTitle = 'Sponsor';
   $activePage = 'sponsor';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $sponsorshipCards = (new \App\Repositories\SponsorshipCardRepository())->activeOrdered();
+
   include 'includes/partials/header.php';
 ?>
 
@@ -28,6 +32,13 @@
             <p><?php echo t('School Sponsorship Text 3'); ?></p>
           </div>
         </div>
+        <?php if ($sponsorshipCards !== []): ?>
+        <div class="row justify-content-center">
+          <?php foreach ($sponsorshipCards as $card): ?>
+            <?php echo \App\Core\View::render('partials/sponsorship-card', ['card' => $card]); ?>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row justify-content-center">
           <div class="col-md-6 ftco-animate">
         		<div class="staff sponsor-card text-center">
@@ -49,6 +60,7 @@
         		</div>
           </div>
         </div>
+        <?php endif; ?>
         <div class="row justify-content-center mt-5">
           <div class="col-md-8 text-center ftco-animate">
             <p><?php echo t('Inspiring Closing Text'); ?></p>

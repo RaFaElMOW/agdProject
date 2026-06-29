@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'Stat Served Prefix' => 'Served Over',
+    'Stat Children Countries Suffix' => 'Children in 190 countries in the world',
     'Home' => 'Home',
     'About' => 'About',
     'Causes' => 'Causes',

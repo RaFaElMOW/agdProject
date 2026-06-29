@@ -1,6 +1,10 @@
 <?php
   $pageTitle = 'Projects';
   $activePage = 'projetos';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $dynamicProjects = (new \App\Repositories\ProjectRepository())->activeOrdered();
+
   include 'includes/partials/header.php';
 ?>
 
@@ -25,6 +29,22 @@
             <p><?php echo t('What We Do Text'); ?></p>
           </div>
         </div>
+        <?php if ($dynamicProjects !== []): ?>
+        <div class="row">
+          <?php foreach ($dynamicProjects as $proj): ?>
+          <div class="col-md-4 ftco-animate">
+            <div class="cause-entry">
+              <a href="<?php echo e('projeto.php?slug=' . $proj['slug']); ?>" class="img" style="background-image: url(<?php echo e(public_asset_url($proj['banner'] ?: 'images/cause-1.jpg')); ?>);"></a>
+              <div class="text p-3 p-md-4">
+                <h3><a href="<?php echo e('projeto.php?slug=' . $proj['slug']); ?>"><?php echo e($proj['name']); ?></a></h3>
+                <p><?php echo e(mb_strimwidth((string) $proj['description'], 0, 160, '...')); ?></p>
+                <p class="mb-0"><a href="<?php echo e('projeto.php?slug=' . $proj['slug']); ?>"><?php echo t('Learn More Link'); ?> <i class="ion-ios-arrow-forward"></i></a></p>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
       	<div class="row">
       		<div class="col-md-4 ftco-animate">
       			<div class="cause-entry">
@@ -114,6 +134,7 @@
     				</div>
       		</div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 
@@ -170,13 +191,7 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Make A Donation Heading'); ?></h3>
-    			<p><?php echo t('Make A Donation Text'); ?></p>
-    			<p class="mb-4"><?php echo t('Pix Bank Info'); ?></p>
-    			<p>
-    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2"><?php echo t('I Want To Donate Button'); ?></a>
-    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2"><?php echo t('Donate Online Button'); ?></a>
-    			</p>
+    			<?php echo \App\Core\View::render('partials/donation-cta'); ?>
     		</div>
     		</div>
     	</div>

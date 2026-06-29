@@ -1,6 +1,13 @@
 <?php
   $pageTitle = 'Who We Are';
   $activePage = 'quemsomos';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $quemSomosContent = (new \App\Repositories\SiteContentRepository())->get('quemsomos') ?? [];
+  $qs = function (string $field, string $fallbackKey) use ($quemSomosContent) {
+      return !empty($quemSomosContent[$field]) ? e($quemSomosContent[$field]) : t($fallbackKey);
+  };
+
   include 'includes/partials/header.php';
 ?>
 
@@ -26,9 +33,9 @@
     			</div>
     			<div class="col-md-7 pl-md-5 ftco-animate">
     				<h2 class="mb-4"><?php echo t('About Me Heading'); ?></h2>
-					<p><?php echo t('Alexandre Bio Text 1'); ?></p>
-					<p><?php echo t('Alexandre Bio Text 2'); ?></p>
-					<p><?php echo t('Alexandre Bio Text 3'); ?></p>
+					<p><?php echo $qs('bio_paragraph_1', 'Alexandre Bio Text 1'); ?></p>
+					<p><?php echo $qs('bio_paragraph_2', 'Alexandre Bio Text 2'); ?></p>
+					<p><?php echo $qs('bio_paragraph_3', 'Alexandre Bio Text 3'); ?></p>
     			</div>
     		</div>
     	</div>

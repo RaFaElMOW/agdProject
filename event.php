@@ -1,6 +1,10 @@
 <?php
   $pageTitle = 'Books';
   $activePage = 'event';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $booksList = (new \App\Repositories\BookRepository())->activeOrdered();
+
   include 'includes/partials/header.php';
 ?>
 
@@ -36,6 +40,13 @@
         	</div>
           </div>
         </div>
+        <?php if ($booksList !== []): ?>
+        <div class="row">
+          <?php foreach ($booksList as $book): ?>
+            <?php echo \App\Core\View::render('partials/book-card', ['book' => $book]); ?>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row">
         	<div class="col-md-6 mb-4 ftco-animate">
         		<div class="staff sponsor-card text-center">
@@ -66,6 +77,7 @@
         		</div>
         	</div>
         </div>
+        <?php endif; ?>
         <div class="row justify-content-center">
           <div class="col-md-8 text-center ftco-animate">
             <p><small><?php echo t('Shipping Policy Text'); ?></small></p>

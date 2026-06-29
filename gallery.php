@@ -1,6 +1,11 @@
 <?php
   $pageTitle = 'Media';
   $activePage = 'gallery';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $mediaImages = (new \App\Repositories\MediaItemRepository())->activeByType('image');
+  $mediaVideos = (new \App\Repositories\MediaItemRepository())->activeByType('video');
+
   include 'includes/partials/header.php';
 ?>
 
@@ -27,6 +32,17 @@
       </div>
     </section>
 
+    <?php if ($mediaImages !== []): ?>
+    <section class="ftco-gallery">
+      <div class="d-md-flex">
+        <?php foreach ($mediaImages as $img): ?>
+        <a href="<?php echo e(public_asset_url($img['url_or_path'])); ?>" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(<?php echo e(public_asset_url($img['url_or_path'])); ?>);">
+          <div class="icon d-flex justify-content-center align-items-center"><span class="icon-search"></span></div>
+        </a>
+        <?php endforeach; ?>
+      </div>
+    </section>
+    <?php else: ?>
     <section class="ftco-gallery">
     	<div class="d-md-flex">
 	    	<a href="images/midia_materia_1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url(images/midia_materia_1.jpg);">
@@ -68,6 +84,7 @@
 	    	</a>
 	    </div>
     </section>
+    <?php endif; ?>
 
     <section class="ftco-section pt-4 pb-5">
       <div class="container">
@@ -87,6 +104,25 @@
             <p><?php echo t('Media Intro Text'); ?></p>
           </div>
         </div>
+        <?php if ($mediaVideos !== []): ?>
+        <div class="row d-flex">
+          <?php foreach ($mediaVideos as $video): ?>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="<?php echo e($video['url_or_path']); ?>" class="block-20 popup-youtube" style="background-image: url(<?php echo e($video['thumbnail'] ?: ''); ?>);">
+              </a>
+              <div class="text p-4 d-block">
+                <div class="meta mb-3">
+                  <div><span class="icon-play mr-1"></span> <?php echo t('Video Label'); ?></div>
+                  <?php if (!empty($video['category'])): ?><div><span class="icon-bookmark mr-1"></span> <?php echo e($video['category']); ?></div><?php endif; ?>
+                </div>
+                <h3 class="heading mt-3"><a href="<?php echo e($video['url_or_path']); ?>" class="popup-youtube"><?php echo e($video['title'] ?? ''); ?></a></h3>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry align-self-stretch">
@@ -193,6 +229,7 @@
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 
@@ -204,13 +241,7 @@
     			<div class="img img-2 align-self-stretch" style="background-image: url(images/bg_4.jpg);"></div>
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
-    			<h3 class="mb-3"><?php echo t('Make A Donation Heading'); ?></h3>
-    			<p><?php echo t('Make A Donation Text'); ?></p>
-    			<p class="mb-4"><?php echo t('Pix Bank Info'); ?></p>
-    			<p>
-    				<a href="donate.php" class="btn btn-white py-3 px-4 mr-2 mb-2"><?php echo t('I Want To Donate Button'); ?></a>
-    				<a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-white btn-outline-white py-3 px-4 mb-2"><?php echo t('Donate Online Button'); ?></a>
-    			</p>
+    			<?php echo \App\Core\View::render('partials/donation-cta'); ?>
     		</div>
     		</div>
     	</div>

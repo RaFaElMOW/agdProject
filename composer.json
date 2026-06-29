@@ -1,0 +1,26 @@
+{
+    "name": "agdniger/portal",
+    "description": "AGD Niger institutional portal - administrable backend",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "firebase/php-jwt": "^7.0",
+        "phpmailer/phpmailer": "^7.0",
+        "ezyang/htmlpurifier": "^4.19"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Support/helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.2"
+        }
+    }
+}

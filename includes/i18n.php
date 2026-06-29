@@ -38,7 +38,34 @@ function translations() {
     return $cache[$lang];
 }
 
+/**
+ * Admin-entered overrides (via the panel's translation editor), loaded once per
+ * request per language. Falls back to an empty map if the DB isn't reachable yet
+ * (e.g. called before the Composer autoloader is available) so t() never breaks
+ * the static lang/*.php fallback that's been there since before this existed.
+ */
+function translation_overrides() {
+    static $cache = [];
+    $lang = current_lang();
+    if (!isset($cache[$lang])) {
+        $cache[$lang] = [];
+        if (class_exists(\App\Repositories\TranslationRepository::class)) {
+            try {
+                $cache[$lang] = (new \App\Repositories\TranslationRepository())->overridesFor($lang);
+            } catch (\Throwable $e) {
+                $cache[$lang] = [];
+            }
+        }
+    }
+    return $cache[$lang];
+}
+
 function t($key) {
+    $overrides = translation_overrides();
+    if (isset($overrides[$key]) && $overrides[$key] !== '') {
+        return $overrides[$key];
+    }
+
     $dict = translations();
     return isset($dict[$key]) ? $dict[$key] : $key;
 }

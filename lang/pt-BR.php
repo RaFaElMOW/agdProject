@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'Stat Served Prefix' => 'Atendemos mais de',
+    'Stat Children Countries Suffix' => 'crianças em 190 países pelo mundo',
     'Home' => 'Início',
     'About' => 'Sobre',
     'Causes' => 'Causas',

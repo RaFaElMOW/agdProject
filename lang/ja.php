@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'Stat Served Prefix' => '世界190カ国で',
+    'Stat Children Countries Suffix' => '人以上の子どもたちを支援',
     'Home' => 'ホーム',
     'About' => '概要',
     'Causes' => '支援活動',

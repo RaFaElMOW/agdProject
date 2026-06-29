@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS blog_posts (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    slug VARCHAR(220) NOT NULL UNIQUE,
+    excerpt TEXT NULL,
+    content LONGTEXT NULL,
+    banner VARCHAR(255) NULL,
+    author_id INT UNSIGNED NULL,
+    category_id INT UNSIGNED NULL,
+    status ENUM('draft', 'scheduled', 'published') NOT NULL DEFAULT 'draft',
+    published_at DATETIME NULL,
+    meta_title VARCHAR(255) NULL,
+    meta_description VARCHAR(500) NULL,
+    og_image VARCHAR(255) NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    CONSTRAINT fk_blog_posts_author FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE SET NULL,
+    CONSTRAINT fk_blog_posts_category FOREIGN KEY (category_id) REFERENCES blog_categories(id) ON DELETE SET NULL,
+    INDEX idx_blog_posts_status_published (status, published_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,6 +1,10 @@
 <?php
   $pageTitle = 'Donations';
   $activePage = 'donate';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $sponsorshipCards = (new \App\Repositories\SponsorshipCardRepository())->activeOrdered();
+
   include 'includes/partials/header.php';
 ?>
 
@@ -39,47 +43,17 @@
         				<div id="collapseBrasil" class="collapse show" data-parent="#accordion">
         					<div class="card-body">
         						<div class="row">
+        							<?php $nationalMethods = (new \App\Repositories\DonationMethodRepository())->activeByScope('national'); ?>
+        							<?php foreach ($nationalMethods as $method): ?>
         							<div class="col-md-6 mb-4">
-        								<h4>Banco Itaú</h4>
+        								<h4><?php echo e($method['label']); ?></h4>
         								<ul class="list-unstyled bank-details">
-        									<li><strong><?php echo t('Field Agencia'); ?></strong> 6375</li>
-        									<li><strong><?php echo t('Field Conta'); ?></strong> 01630-7</li>
-        									<li><strong><?php echo t('Field Beneficiario'); ?></strong> Instituto Social e Comunitário Guerreiros de Deus</li>
-        									<li><strong>CNPJ:</strong> 08.280.906/0001-19</li>
-        									<li><strong>IBAN:</strong> BR54 6070 1190 0637 5000 0016 307C 1</li>
+        									<?php foreach (preg_split('/\r?\n/', $method['details']) as $line): if (trim($line) === '') { continue; } ?>
+        									<li><?php echo e($line); ?></li>
+        									<?php endforeach; ?>
         								</ul>
         							</div>
-        							<div class="col-md-6 mb-4">
-        								<h4>Banco do Brasil</h4>
-        								<ul class="list-unstyled bank-details">
-        									<li><strong><?php echo t('Field Agencia'); ?></strong> 3327-8</li>
-        									<li><strong><?php echo t('Field Conta'); ?></strong> 33029-9</li>
-        								</ul>
-        							</div>
-        							<div class="col-md-6 mb-4">
-        								<h4>Caixa Econômica Federal</h4>
-        								<ul class="list-unstyled bank-details">
-        									<li><strong><?php echo t('Field Agencia'); ?></strong> 0244</li>
-        									<li><strong><?php echo t('Field Conta'); ?></strong> 000597850629-5</li>
-        									<li><strong><?php echo t('Field Titular'); ?></strong> Walter Alexandre Canhoni</li>
-        								</ul>
-        							</div>
-        							<div class="col-md-6 mb-4">
-        								<h4>Bradesco</h4>
-        								<ul class="list-unstyled bank-details">
-        									<li><strong><?php echo t('Field Agencia'); ?></strong> 0764</li>
-        									<li><strong><?php echo t('Field Conta'); ?></strong> 0126319-6</li>
-        									<li><strong><?php echo t('Field Titular'); ?></strong> Walter Alexandre Canhoni</li>
-        								</ul>
-        							</div>
-        							<div class="col-md-6">
-        								<h4><span class="icon-qrcode mr-2"></span>PIX</h4>
-        								<p class="bank-details">08.280.906/0001-19</p>
-        							</div>
-        							<div class="col-md-6">
-        								<h4>Zelle</h4>
-        								<p class="bank-details">mgiovanac@hotmail.com<br>alexandregiovana@uol.com.br</p>
-        							</div>
+        							<?php endforeach; ?>
         						</div>
         					</div>
         				</div>
@@ -94,22 +68,17 @@
         				<div id="collapseInternacional" class="collapse" data-parent="#accordion">
         					<div class="card-body">
         						<div class="row">
+        							<?php $internationalMethods = (new \App\Repositories\DonationMethodRepository())->activeByScope('international'); ?>
+        							<?php foreach ($internationalMethods as $method): ?>
         							<div class="col-md-6 mb-4">
-        								<h4>Ecobank Niger (Niamey)</h4>
+        								<h4><?php echo e($method['label']); ?></h4>
         								<ul class="list-unstyled bank-details">
-        									<li><strong>SWIFT:</strong> ECOCNENIXXX</li>
-        									<li><strong>IBAN:</strong> NE09 5010 0616 0050 0030 0167</li>
-        									<li><strong><?php echo t('Field Conta'); ?></strong> Association Guerreiros de Deus</li>
+        									<?php foreach (preg_split('/\r?\n/', $method['details']) as $line): if (trim($line) === '') { continue; } ?>
+        									<li><?php echo e($line); ?></li>
+        									<?php endforeach; ?>
         								</ul>
         							</div>
-        							<div class="col-md-6 mb-4">
-        								<h4>Western Union</h4>
-        								<p class="bank-details"><?php echo t('Western Union Email Text'); ?></p>
-        							</div>
-        							<div class="col-md-6">
-        								<h4>Wise</h4>
-        								<p class="bank-details">@walter58c</p>
-        							</div>
+        							<?php endforeach; ?>
         						</div>
         					</div>
         				</div>
@@ -124,7 +93,7 @@
         				<div id="collapseOnline" class="collapse" data-parent="#accordion">
         					<div class="card-body">
         						<p><?php echo t('Online Payment Text'); ?></p>
-        						<p class="mb-0"><a href="https://www.agdniger.com/doacao" target="_blank" rel="noopener" class="btn btn-primary px-4 py-3"><span class="icon-paypal mr-2"></span><?php echo t('Donate Online Button'); ?></a></p>
+        						<p class="mb-0"><a href="#" data-toggle="modal" data-target="#donationModal" class="btn btn-primary px-4 py-3"><span class="icon-paypal mr-2"></span><?php echo t('Donate Online Button'); ?></a></p>
         					</div>
         				</div>
         			</div>
@@ -192,6 +161,13 @@
             <p><?php echo t('Sponsor Intro Text'); ?></p>
           </div>
         </div>
+        <?php if ($sponsorshipCards !== []): ?>
+        <div class="row">
+          <?php foreach ($sponsorshipCards as $card): ?>
+            <?php echo \App\Core\View::render('partials/sponsorship-card', ['card' => $card]); ?>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row">
         	<div class="col-md-6 mb-4 ftco-animate">
         		<div class="staff sponsor-card text-center">
@@ -212,6 +188,7 @@
         		</div>
         	</div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 

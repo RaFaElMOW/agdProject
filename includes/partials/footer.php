@@ -1,4 +1,9 @@
-<?php require_once __DIR__ . '/../i18n.php'; ?>
+<?php
+require_once __DIR__ . '/../i18n.php';
+require_once __DIR__ . '/../cms-bootstrap.php';
+
+use App\Support\Settings;
+?>
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
@@ -8,11 +13,11 @@
               <h2 class="ftco-heading-2"><?php echo t('About Us'); ?></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="https://www.facebook.com/agdniger" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/agdniger" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a></li>
-                <li class="ftco-animate"><a href="https://twitter.com/xandniger" target="_blank" rel="noopener" aria-label="Twitter"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.youtube.com/alexandrecanhoni" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube"></span></a></li>
-                <li class="ftco-animate"><a href="https://open.spotify.com/artist/2XdJcd6XJApRFv57Pj6HGf" target="_blank" rel="noopener" aria-label="Spotify"><span class="icon-spotify"></span></a></li>
+                <li class="ftco-animate"><a href="<?php echo e(Settings::get('social_facebook', 'https://www.facebook.com/agdniger')); ?>" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="<?php echo e(Settings::get('social_instagram', 'https://www.instagram.com/agdniger')); ?>" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="<?php echo e(Settings::get('social_twitter', 'https://twitter.com/xandniger')); ?>" target="_blank" rel="noopener" aria-label="Twitter"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="<?php echo e(Settings::get('social_youtube', 'https://www.youtube.com/alexandrecanhoni')); ?>" target="_blank" rel="noopener" aria-label="YouTube"><span class="icon-youtube"></span></a></li>
+                <li class="ftco-animate"><a href="<?php echo e(Settings::get('social_spotify', 'https://open.spotify.com/artist/2XdJcd6XJApRFv57Pj6HGf')); ?>" target="_blank" rel="noopener" aria-label="Spotify"><span class="icon-spotify"></span></a></li>
               </ul>
             </div>
           </div>
@@ -47,12 +52,19 @@
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2"><?php echo t('Site Links'); ?></h2>
               <ul class="list-unstyled">
+                <?php
+                $footerLinks = \App\Support\MenuRenderer::footerLinks();
+                if ($footerLinks !== ''):
+                    echo $footerLinks;
+                else:
+                ?>
                 <li><a href="#" class="py-2 d-block"><?php echo t('Home'); ?></a></li>
                 <li><a href="#" class="py-2 d-block"><?php echo t('About'); ?></a></li>
                 <li><a href="#" class="py-2 d-block"><?php echo t('Donate'); ?></a></li>
                 <li><a href="#" class="py-2 d-block"><?php echo t('Causes'); ?></a></li>
                 <li><a href="#" class="py-2 d-block"><?php echo t('Event'); ?></a></li>
                 <li><a href="#" class="py-2 d-block"><?php echo t('Blog'); ?></a></li>
+                <?php endif; ?>
               </ul>
             </div>
           </div>
@@ -61,9 +73,10 @@
             	<h2 class="ftco-heading-2"><?php echo t('Have a Questions?'); ?></h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text"><?php echo e(Settings::get('contact_address', '203 Fake St. Mountain View, San Francisco, California, USA')); ?></span></li>
+	                <?php $footerPhone = Settings::get('contact_whatsapp_display', '') ?: Settings::get('contact_phone', '+2 392 3929 210'); ?>
+	                <li><a href="<?php echo e(Settings::get('social_whatsapp', '#')); ?>"><span class="icon icon-phone"></span><span class="text"><?php echo e($footerPhone); ?></span></a></li>
+	                <li><a href="mailto:<?php echo e(Settings::get('contact_email', 'info@yourdomain.com')); ?>"><span class="icon icon-envelope"></span><span class="text"><?php echo e(Settings::get('contact_email', 'info@yourdomain.com')); ?></span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -89,6 +102,7 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <?php echo \App\Core\View::render('partials/donation-modal'); ?>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -107,6 +121,14 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('<?php echo e(public_asset_url('sw.js')); ?>', { scope: '<?php echo e(public_asset_url('/')); ?>' })
+          .catch(function () { /* PWA install is a nice-to-have, never block the page on it */ });
+      });
+    }
+  </script>
 
   </body>
 </html>

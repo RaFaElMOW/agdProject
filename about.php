@@ -1,6 +1,13 @@
 <?php
   $pageTitle = 'About Us';
   $activePage = 'about';
+
+  require_once __DIR__ . '/includes/cms-bootstrap.php';
+  $aboutContent = (new \App\Repositories\SiteContentRepository())->get('about') ?? [];
+  $ac = function (string $field, string $fallbackKey) use ($aboutContent) {
+      return !empty($aboutContent[$field]) ? e($aboutContent[$field]) : t($fallbackKey);
+  };
+
   include 'includes/partials/header.php';
 ?>
 
@@ -11,7 +18,7 @@
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
              <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.php"><?php echo t('Home'); ?></a></span> <span><?php echo t('About'); ?></span></p>
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><?php echo t('About Us'); ?></h1>
-			<h2 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color: #ffff"><?php echo t('About Hero Quote'); ?></h2>
+			<h2 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color: #ffff"><?php echo $ac('hero_quote', 'About Hero Quote'); ?></h2>
           </div>
         </div>
       </div>
@@ -25,17 +32,17 @@
     				<div class="img img-about align-self-stretch" style="background-image: url(images/bg_3.jpg); width: 100%;"></div>
     			</div>
     			<div class="col-md-6 pl-md-5 ftco-animate">
-    				<h2 class="mb-4"><?php echo t('Welcome to Welfare Stablished Since 1898'); ?></h2>
-					<p><?php echo t('About Intro Text'); ?></p>
-					<h3><?php echo t('About Areas Heading'); ?></h3>
-					<p><?php echo t('About Areas Text'); ?></p>
-					<h2><?php echo t('About Mission Heading'); ?></h2>
-					<p><?php echo t('About Mission Text'); ?></p>
-					<h2><?php echo t('About Vision Heading'); ?></h2>
-					<p><?php echo t('About Vision Text'); ?></p>
-					<p><?php echo t('About Vision Prayer Text'); ?></p>
-					<h2><?php echo t('About Values Heading'); ?></h2>
-					<p><?php echo t('About Values Text'); ?></p>
+    				<h2 class="mb-4"><?php echo $ac('welcome_heading', 'Welcome to Welfare Stablished Since 1898'); ?></h2>
+					<p><?php echo $ac('intro_text', 'About Intro Text'); ?></p>
+					<h3><?php echo $ac('areas_heading', 'About Areas Heading'); ?></h3>
+					<p><?php echo $ac('areas_text', 'About Areas Text'); ?></p>
+					<h2><?php echo $ac('mission_heading', 'About Mission Heading'); ?></h2>
+					<p><?php echo $ac('mission_text', 'About Mission Text'); ?></p>
+					<h2><?php echo $ac('vision_heading', 'About Vision Heading'); ?></h2>
+					<p><?php echo $ac('vision_text', 'About Vision Text'); ?></p>
+					<p><?php echo $ac('vision_prayer_text', 'About Vision Prayer Text'); ?></p>
+					<h2><?php echo $ac('values_heading', 'About Values Heading'); ?></h2>
+					<p><?php echo $ac('values_text', 'About Values Text'); ?></p>
     			</div>
     		</div>
     	</div>
@@ -47,9 +54,9 @@
     			<div class="col-md-5 d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 color-1 align-items-stretch">
               <div class="text">
-              	<span>Served Over</span>
-                <strong class="number" data-number="1432805">0</strong>
-                <span>Children in 190 countries in the world</span>
+              	<span><?php echo t('Stat Served Prefix'); ?></span>
+                <strong class="number" data-number="<?php echo (int) \App\Support\Settings::get('stat_children_served', '1432805'); ?>">0</strong>
+                <span><?php echo t('Stat Children Countries Suffix'); ?></span>
               </div>
             </div>
           </div>
@@ -58,7 +65,7 @@
               <div class="text">
               	<h3 class="mb-4">Donate Money</h3>
               	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
-              	<p><a href="#" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
+              	<p><a href="#" data-toggle="modal" data-target="#donationModal" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
           </div>
@@ -82,6 +89,29 @@
             <h2 class="mb-4"><?php echo t('Team Members Heading'); ?></h2>
           </div>
         </div>
+        <?php $teamMembers = (new \App\Repositories\TeamMemberRepository())->activeOrdered(); ?>
+        <?php if ($teamMembers !== []): ?>
+        <div class="row">
+          <?php foreach ($teamMembers as $tm): ?>
+          <div class="col-12 mb-4 ftco-animate">
+            <div class="staff">
+              <div class="d-flex mb-4">
+                <div class="img" style="background-image: url(<?php echo e(public_asset_url($tm['photo'] ?: 'images/equipe_local.jpg')); ?>);"></div>
+                <div class="info ml-4">
+                  <h3><?php echo e($tm['name']); ?></h3>
+                  <?php if (!empty($tm['role'])): ?><span class="position"><?php echo e($tm['role']); ?></span><?php endif; ?>
+                  <div class="text">
+                    <?php foreach (preg_split('/\r?\n/', (string) $tm['bio']) as $line): if (trim($line) === '') { continue; } ?>
+                    <p><?php echo e($line); ?></p>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row">
         	<div class="col-12 mb-4 ftco-animate">
         		<div class="staff">
@@ -133,6 +163,7 @@
         		</div>
         	</div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 
@@ -143,6 +174,32 @@
             <h2 class="mb-4"><?php echo t('Testimonials Heading'); ?></h2>
           </div>
         </div>
+        <?php $testimonialsList = (new \App\Repositories\TestimonialRepository())->activeOrdered(); ?>
+        <?php if ($testimonialsList !== []): ?>
+        <div class="row depoimentos">
+          <?php foreach ($testimonialsList as $tm): ?>
+          <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+            <div class="staff">
+              <div class="d-flex mb-4">
+                <div class="img-wrap">
+                  <div class="img" style="background-image: url(<?php echo e(public_asset_url($tm['photo'] ?: 'images/person_1.jpg')); ?>);"></div>
+                  <?php if (!empty($tm['youtube_url'])): ?>
+                  <a href="<?php echo e($tm['youtube_url']); ?>" target="_blank" rel="noopener" class="youtube-link" aria-label="YouTube"><span class="icon-youtube-play"></span></a>
+                  <?php endif; ?>
+                </div>
+                <div class="info ml-4">
+                  <h3><?php echo e($tm['name']); ?></h3>
+                  <?php if (!empty($tm['role'])): ?><span class="position"><?php echo e($tm['role']); ?></span><?php endif; ?>
+                  <div class="text">
+                    <p><?php echo e($tm['text']); ?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php else: ?>
         <div class="row depoimentos">
         	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
@@ -281,6 +338,7 @@
         		</div>
         	</div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
 

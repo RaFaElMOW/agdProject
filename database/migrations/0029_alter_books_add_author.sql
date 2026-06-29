@@ -1,0 +1,2 @@
+ALTER TABLE books
+    ADD COLUMN author VARCHAR(150) NULL AFTER title;
