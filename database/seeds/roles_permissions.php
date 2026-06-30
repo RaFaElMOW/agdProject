@@ -24,6 +24,7 @@ return [
         ['slug' => 'contact.view', 'name' => 'Visualizar mensagens de contato', 'module' => 'contact'],
         ['slug' => 'audit.view', 'name' => 'Visualizar logs de auditoria', 'module' => 'audit'],
         ['slug' => 'translations.manage', 'name' => 'Gerenciar traduções', 'module' => 'translations'],
+        ['slug' => 'security.manage', 'name' => 'Gerenciar configurações de segurança', 'module' => 'security'],
     ],
 
     'roles' => [

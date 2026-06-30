@@ -4,21 +4,25 @@ namespace App\Services;
 
 use App\Repositories\LoginAttemptRepository;
 use App\Repositories\UserRepository;
+use App\Security\LoginProtection;
 
 class AuthService
 {
     private UserRepository $users;
     private LoginAttemptRepository $attempts;
     private AuditService $audit;
+    private LoginProtection $loginProtection;
 
     public function __construct(
         ?UserRepository $users = null,
         ?LoginAttemptRepository $attempts = null,
-        ?AuditService $audit = null
+        ?AuditService $audit = null,
+        ?LoginProtection $loginProtection = null
     ) {
         $this->users = $users ?? new UserRepository();
         $this->attempts = $attempts ?? new LoginAttemptRepository();
         $this->audit = $audit ?? new AuditService();
+        $this->loginProtection = $loginProtection ?? new LoginProtection();
     }
 
     /**
@@ -51,10 +55,9 @@ class AuthService
             $this->users->incrementFailedAttempts((int) $user['id']);
             $this->attempts->record($email, false, $ip, $userAgent);
 
-            $maxAttempts = (int) config('app.auth.max_failed_attempts', 5);
+            $maxAttempts = $this->loginProtection->maxAttempts();
             if (((int) $user['failed_attempts']) + 1 >= $maxAttempts) {
-                $lockoutMinutes = (int) config('app.auth.lockout_minutes', 15);
-                $this->users->lockUntil((int) $user['id'], date('Y-m-d H:i:s', time() + $lockoutMinutes * 60));
+                $this->users->lockUntil((int) $user['id'], $this->loginProtection->lockUntilDatetime());
                 $this->audit->log((int) $user['id'], 'account_locked', $ip, 'user', (string) $user['id']);
             }
 
@@ -67,9 +70,12 @@ class AuthService
         $this->attempts->record($email, true, $ip, $userAgent);
         $this->audit->log((int) $user['id'], 'login_success', $ip, 'user', (string) $user['id']);
 
-        session_regenerate_id(true);
+        if ((new \App\Security\SessionManager())->regenerateOnLogin()) {
+            session_regenerate_id(true);
+        }
         $_SESSION['user_id'] = (int) $user['id'];
         $_SESSION['token_version'] = (int) $user['token_version'];
+        $_SESSION['last_activity'] = time();
 
         return [
             'ok' => true,

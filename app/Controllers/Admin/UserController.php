@@ -7,6 +7,7 @@ use App\Core\Response;
 use App\Core\View;
 use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
+use App\Security\PasswordPolicy;
 use App\Services\AuditService;
 use App\Support\Auth;
 use App\Support\Flash;
@@ -37,6 +38,7 @@ class UserController
             'user' => null,
             'roles' => (new RoleRepository())->all(),
             'selectedRoleIds' => [],
+            'minLength' => (new PasswordPolicy())->minLength(),
         ], 'admin/layout');
     }
 
@@ -47,8 +49,11 @@ class UserController
         $password = (string) $request->input('password', '');
         $roleIds = array_map('intval', (array) ($_POST['roles'] ?? []));
 
-        if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($password) < 10) {
-            Flash::set('user_error', 'Verifique os dados: nome, e-mail válido e senha com no mínimo 10 caracteres são obrigatórios.');
+        $passwordErrors = (new PasswordPolicy())->validate($password);
+        if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || $passwordErrors !== []) {
+            Flash::set('user_error', $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)
+                ? 'Verifique os dados: nome e e-mail válido são obrigatórios.'
+                : implode(' ', $passwordErrors));
             Response::redirect('/admin/usuarios/novo');
         }
 
@@ -153,7 +158,7 @@ class UserController
             Response::notFound('Usuário não encontrado.');
         }
 
-        $newPassword = bin2hex(random_bytes(8));
+        $newPassword = (new PasswordPolicy())->generateSecurePassword();
         $users->updatePassword($id, password_hash($newPassword, PASSWORD_DEFAULT), true);
         $users->bumpTokenVersion($id);
 

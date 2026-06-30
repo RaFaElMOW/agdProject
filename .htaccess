@@ -15,11 +15,18 @@ ServerSignature Off
   # (this is a no-SSH shared host) and enforces its own token + session checks internally.
   RewriteRule ^(app|database|storage|vendor|resources|docs)(/.*)?$ - [F,L]
 
-  # Pretty routes for the admin panel: anything under /admin that isn't a real file/dir
-  # is dispatched to the front controller, which routes it internally.
+  # The admin panel never lives at a predictable path. Any request to these
+  # common admin paths (and anything nested under them) returns a plain 404 —
+  # never 401/403 — so an attacker scanning for a panel learns nothing.
+  RewriteRule ^(admin|administrator|backend|dashboard|painel)(/.*)?$ - [R=404,L]
+
+  # Token-gated admin entry point: /portal/{admin_route_token}/... is dispatched
+  # to the front controller, which validates the token internally (see
+  # portal/index.php) and 404s on any mismatch. The token itself is never
+  # hardcoded here — it's stored in the security_settings table.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^admin(/.*)?$ admin/index.php [L]
+  RewriteRule ^portal(/.*)?$ portal/index.php [L]
 
   # Friendly blog URLs: /blog/titulo-do-post -> blog-single.php?slug=titulo-do-post
   RewriteRule ^blog/([a-zA-Z0-9-]+)/?$ blog-single.php?slug=$1 [L,QSA]
@@ -30,6 +37,8 @@ ServerSignature Off
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # Only meaningful to browsers over HTTPS; harmless (ignored) over plain HTTP.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
 </IfModule>
 
 <FilesMatch "\.(sql|log|md)$">

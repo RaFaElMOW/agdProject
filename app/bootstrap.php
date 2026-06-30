@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use App\Core\Env;
+use App\Security\SecuritySettings;
+use App\Security\SessionManager;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -22,13 +24,28 @@ $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 
 if (session_status() === PHP_SESSION_NONE) {
     session_name((string) config('app.session.name', 'agd_session'));
+
+    // Security Settings overrides session cookie policy when the DB is reachable;
+    // these calls fail closed to the hardcoded defaults below if it isn't (e.g.
+    // first install, before migrations have run).
+    try {
+        $sessionManager = new SessionManager(SecuritySettings::getInstance());
+        $sameSite = $sessionManager->sameSite();
+        $cookieSecure = $sessionManager->cookieSecure() || $isHttps;
+        $cookieHttpOnly = $sessionManager->cookieHttpOnly();
+    } catch (\Throwable) {
+        $sameSite = 'Lax';
+        $cookieSecure = $isHttps;
+        $cookieHttpOnly = true;
+    }
+
     session_set_cookie_params([
         'lifetime' => (int) config('app.session.lifetime_minutes', 120) * 60,
         'path' => '/',
         'domain' => '',
-        'secure' => $isHttps,
-        'httponly' => true,
-        'samesite' => 'Lax',
+        'secure' => $cookieSecure,
+        'httponly' => $cookieHttpOnly,
+        'samesite' => $sameSite,
     ]);
     session_start();
 }

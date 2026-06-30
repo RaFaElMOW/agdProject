@@ -11,6 +11,7 @@ Documentação produzida ao final da Fase 4 (hardening, pentest, CVEs e document
 | [05-deploy-cpanel.md](05-deploy-cpanel.md) | Passo a passo de deploy em hospedagem compartilhada sem SSH |
 | [06-checklist-producao.md](06-checklist-producao.md) | Checklist de homologação e go-live |
 | [07-performance.md](07-performance.md) | Gargalos conhecidos e recomendações |
+| [08-editor-rico-blog.md](08-editor-rico-blog.md) | Editor rico (Quill) no formulário de blog — arquitetura da sanitização e bateria de testes de XSS pós-implementação |
 
 O documento de arquitetura **proposta** (aprovado antes da Fase 0) está fora deste repositório, em `C:\Users\rafae\.claude\plans\reactive-crunching-crystal.md` — os documentos aqui descrevem o que foi **efetivamente construído e testado**.
 

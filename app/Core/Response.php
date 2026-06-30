@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Security\AdminPath;
 use App\Support\BasePath;
 use App\Support\UrlAllowlist;
 
@@ -10,6 +11,14 @@ class Response
     public static function redirect(string $path): never
     {
         $safe = UrlAllowlist::sanitizeInternal($path);
+
+        // Controllers redirect using the stable internal "/admin/..." path;
+        // translate it to the current token-gated portal URL here so callers
+        // never need to know about the admin route token.
+        if (str_starts_with($safe, '/admin')) {
+            $safe = AdminPath::redirectPath($safe);
+        }
+
         header('Location: ' . BasePath::url($safe));
         exit;
     }

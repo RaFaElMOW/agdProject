@@ -1,6 +1,7 @@
 <?php
 
 use App\Core\Env;
+use App\Security\AdminPath;
 use App\Support\BasePath;
 use App\Support\Csrf;
 
@@ -75,9 +76,21 @@ if (!function_exists('base_url')) {
 }
 
 if (!function_exists('admin_url')) {
+    /**
+     * Resolves an admin path (e.g. "/admin/login") to the public URL the admin
+     * panel is actually reachable at — "/portal/{admin_route_token}/login" in
+     * production. Callers never need to know the current token.
+     */
     function admin_url(string $path): string
     {
-        return BasePath::url($path);
+        return AdminPath::url($path);
+    }
+}
+
+if (!function_exists('csp_nonce')) {
+    function csp_nonce(): string
+    {
+        return \App\Middleware\SecurityHeadersMiddleware::currentNonce();
     }
 }
 
@@ -108,7 +121,10 @@ if (!function_exists('public_asset_url')) {
 if (!function_exists('nav_active')) {
     function nav_active(string $path, bool $exact = false): string
     {
-        $current = rtrim((string) ($_SERVER['REQUEST_URI'] ?? ''), '/');
+        // Admin routes are dispatched after REQUEST_URI has been rewritten from the
+        // token-gated /portal/{token}/... URL to the internal /admin/... path, so we
+        // compare against the original browser-facing URI instead.
+        $current = rtrim(strtok(AdminPath::getOriginalUri(), '?') ?: '/', '/');
         $target = rtrim(admin_url($path), '/');
         $match = $exact ? ($current === $target) : str_starts_with($current, $target);
         return $match ? ' class="active"' : '';

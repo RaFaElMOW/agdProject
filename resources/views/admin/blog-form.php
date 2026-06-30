@@ -1,7 +1,9 @@
 <h1><?php echo $post ? 'Editar post' : 'Novo post'; ?></h1>
 <?php if (!empty($error)): ?><div class="error"><?php echo e($error); ?></div><?php endif; ?>
 
-<form method="post" action="<?php echo e($post ? admin_url('/admin/blog/' . $post['id']) : admin_url('/admin/blog')); ?>" enctype="multipart/form-data">
+<link rel="stylesheet" href="<?php echo e(admin_url('/admin/assets/quill/quill.snow.css')); ?>">
+
+<form method="post" action="<?php echo e($post ? admin_url('/admin/blog/' . $post['id']) : admin_url('/admin/blog')); ?>" enctype="multipart/form-data" id="blog-form">
   <?php echo csrf_field(); ?>
 
   <div class="grid-2">
@@ -12,9 +14,10 @@
   <div class="field"><label for="excerpt">Resumo (exibido na listagem)</label><textarea id="excerpt" name="excerpt"><?php echo e($post['excerpt'] ?? ''); ?></textarea></div>
 
   <div class="field">
-    <label for="content">Conteúdo</label>
-    <div class="hint">Tags HTML permitidas: parágrafos, negrito, itálico, listas, links, imagens, títulos. O restante é removido automaticamente.</div>
-    <textarea id="content" name="content" style="min-height:220px;"><?php echo e($post['content'] ?? ''); ?></textarea>
+    <label for="content-editor">Conteúdo</label>
+    <div class="hint">Formatação disponível: títulos, negrito, itálico, sublinhado, tachado, listas, citação, link e imagem (por URL). Qualquer outro HTML colado aqui é removido automaticamente ao salvar.</div>
+    <div id="content-editor" style="min-height:260px; background:#fff;"><?php echo $post['content'] ?? ''; /* already sanitized on save; Quill parses this as its initial content */ ?></div>
+    <textarea id="content" name="content" style="display:none;"></textarea>
   </div>
 
   <div class="field">
@@ -64,3 +67,34 @@
 
   <button type="submit">Salvar</button>
 </form>
+
+<script src="<?php echo e(admin_url('/admin/assets/quill/quill.min.js')); ?>"></script>
+<script>
+(function () {
+  // Toolbar is deliberately limited to exactly what the server-side sanitizer allows
+  // (see App\Support\Sanitizer) — no color/background/align/font, since those rely on
+  // inline styles that the sanitizer strips (and won't survive a save anyway).
+  var quill = new Quill('#content-editor', {
+    theme: 'snow',
+    modules: {
+      toolbar: [
+        [{ header: 2 }, { header: 3 }, { header: 4 }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        ['blockquote', 'link', 'image'],
+        ['clean']
+      ]
+    }
+  });
+
+  var form = document.getElementById('blog-form');
+  var hidden = document.getElementById('content');
+
+  form.addEventListener('submit', function () {
+    // The editor's HTML is a UX convenience only — the server independently sanitizes
+    // this value on save (see App\Support\Sanitizer::richText), so this never needs to
+    // be trusted client-side.
+    hidden.value = quill.root.innerHTML;
+  });
+})();
+</script>

@@ -52,9 +52,9 @@
 <header>
   <span class="brand">AGD Niger — Painel</span>
   <span>
-    <form method="post" action="<?php echo e(admin_url('/admin/logout-global')); ?>">
+    <form method="post" action="<?php echo e(admin_url('/admin/logout-global')); ?>" data-confirm="Encerrar todas as sessões deste usuário?">
       <?php echo csrf_field(); ?>
-      <button type="submit" onclick="return confirm('Encerrar todas as sessões deste usuário?');">Sair de todos os dispositivos</button>
+      <button type="submit">Sair de todos os dispositivos</button>
     </form>
     <form method="post" action="<?php echo e(admin_url('/admin/logout')); ?>">
       <?php echo csrf_field(); ?>
@@ -81,6 +81,7 @@
   <a href="<?php echo e(admin_url('/admin/traducoes')); ?>"<?php echo nav_active('/admin/traducoes'); ?>>Traduções</a>
   <a href="<?php echo e(admin_url('/admin/usuarios')); ?>"<?php echo nav_active('/admin/usuarios'); ?>>Usuários</a>
   <a href="<?php echo e(admin_url('/admin/auditoria')); ?>"<?php echo nav_active('/admin/auditoria'); ?>>Auditoria</a>
+  <a href="<?php echo e(admin_url('/admin/seguranca')); ?>"<?php echo nav_active('/admin/seguranca'); ?>>Segurança</a>
 </nav>
 <main>
 <div class="panel">
@@ -88,5 +89,13 @@
 </div>
 </main>
 </div>
+<script nonce="<?php echo e(csp_nonce()); ?>">
+  document.addEventListener('submit', function (event) {
+    var form = event.target.closest('form[data-confirm]');
+    if (form && !window.confirm(form.getAttribute('data-confirm'))) {
+      event.preventDefault();
+    }
+  });
+</script>
 </body>
 </html>

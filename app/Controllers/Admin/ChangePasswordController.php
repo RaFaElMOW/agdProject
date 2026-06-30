@@ -6,6 +6,7 @@ use App\Core\Request;
 use App\Core\Response;
 use App\Core\View;
 use App\Repositories\UserRepository;
+use App\Security\PasswordPolicy;
 use App\Services\AuditService;
 use App\Support\Auth;
 use App\Support\Flash;
@@ -16,6 +17,7 @@ class ChangePasswordController
     {
         View::output('admin/change-password', [
             'error' => Flash::pull('change_password_error'),
+            'minLength' => (new PasswordPolicy())->minLength(),
         ], 'admin/layout');
     }
 
@@ -24,8 +26,12 @@ class ChangePasswordController
         $password = (string) $request->input('password', '');
         $confirmation = (string) $request->input('password_confirmation', '');
 
-        if (strlen($password) < 10 || $password !== $confirmation) {
-            Flash::set('change_password_error', 'A senha deve ter no mínimo 10 caracteres e a confirmação deve ser igual.');
+        $errors = (new PasswordPolicy())->validate($password);
+        if ($password !== $confirmation) {
+            $errors[] = 'A confirmação deve ser igual à senha.';
+        }
+        if ($errors !== []) {
+            Flash::set('change_password_error', implode(' ', $errors));
             Response::redirect('/admin/trocar-senha');
         }
 

@@ -15,8 +15,8 @@
 
   <?php if (!$user): ?>
   <div class="field">
-    <label for="password">Senha inicial (mínimo 10 caracteres)</label>
-    <input type="password" id="password" name="password" minlength="10" required>
+    <label for="password">Senha inicial (mínimo <?php echo e((string) $minLength); ?> caracteres)</label>
+    <input type="password" id="password" name="password" minlength="<?php echo e((string) $minLength); ?>" required>
   </div>
   <div class="hint">O usuário será obrigado a trocar a senha no primeiro login.</div>
   <?php else: ?>
